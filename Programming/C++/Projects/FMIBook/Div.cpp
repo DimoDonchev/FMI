@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+//beautiful
 
 void Div::copyFrom(const Div & other)
 {
