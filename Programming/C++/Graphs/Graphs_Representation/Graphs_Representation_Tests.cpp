@@ -34,14 +34,14 @@ void createCustomMatrix(vector<vector<int>>& adjMatrix, int V) {
 }
 
 //adds an edge in an Adjacency List
-void addEdge(vector<list<pair<int, int>>>& adjList, int i, int j, int weight) {
-	adjList[i].push_back(make_pair(j, weight));//for a directed graph
-	//adjList[j].push_back(make_pair(i,weight));//for an undirected graph
+void addEdge(vector<list<int>>& adjList, int i, int j, int weight) {
+	adjList[i].push_back(j);//for a directed graph
+	//adjList[j].push_back(i);//for an undirected graph
 }
 
 
 //creates AdjacencyList for custom Graph
-void createCustomList(vector<list<pair<int, int>>>& adjList, int V) {
+void createCustomList(vector<list<int>>& adjList, int V) {
 	addEdge(adjList, 0, 1, 4);
 	addEdge(adjList, 0, 2, 1);
 	addEdge(adjList, 0, 3, 9);
@@ -83,10 +83,10 @@ int main() {
 	/*
 	An Adjacency List is a way to represent a graph.
 	The vertices are indexes in a vector.
-	Each vertex has a list of its edges represented as pairs(where it goes,weight).
+	Each vertex has a list of its the nodes it is connected to.
 	*/
 
-	vector<list<pair<int,int>>> adjList(4);
+	vector<list<int>> adjList(4);
 	createCustomList(adjList, 4);
 
 	/*
